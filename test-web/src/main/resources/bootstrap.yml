@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+      name: heroku-test
+
+jdbc:
+  postgresql:
+    url: jdbc:postgresql://ec2-54-243-147-162.compute-1.amazonaws.com:5432/d8c1a7fa7ihqal?sslmode=require
+    username: dkyzpsuabsvsqi
+    password: 5a5ee736813b3535790a48333b8bf1cb96c2aa8b34edf12d7657903085a44bc1
+    driver: org.postgresql.Driver
+
+
+#jdbc:
+#  postgresql:
+#    url: jdbc:postgresql://172.128.3.151:54321/postgres
+#    username: postgres
+#    password: 123321
+#    driver: org.postgresql.Driver
+
+# mybatis
+mybatis:
+    config-location: classpath:mybatis/config/mybatis-config.xml
+    type-aliases-package: com.alpha.heroku.test.entity
+    mapper-locations: classpath:mybatis/*.xml
+
+mapper:
+    enumAsSimpleType: true
+    not-empty: true
+    usePrimitiveType: true
+    identity: POSTGRESQL

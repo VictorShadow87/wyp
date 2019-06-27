@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="SqlServer" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://ec2-54-243-147-162.compute-1.amazonaws.com:5432/d8c1a7fa7ihqal?sslmode=require"
+                        userId="dkyzpsuabsvsqi" password="5a5ee736813b3535790a48333b8bf1cb96c2aa8b34edf12d7657903085a44bc1">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.alpha.heroku.test.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.alpha.heroku.test.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <table tableName="my_first" />
+
+    </context>
+</generatorConfiguration>

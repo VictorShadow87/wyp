@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alpha.heroku.test.mapper.MyFirstMapper">
+  <resultMap id="BaseResultMap" type="com.alpha.heroku.test.entity.MyFirst">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+  </resultMap>
+</mapper>
